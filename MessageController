@@ -23,7 +23,6 @@ public String greeting (Map<String, Object> model) { // в model складыв�
     @RequestParam ("file") MultipartFile file
   ) throws IOExceprion{
     message.setAuthor(user);
-  }
 
     if(bindingResult.hasErrors()){
     Map<String, String>ErrorsMap = ControllerUtils.getErrors(bingingResult);
