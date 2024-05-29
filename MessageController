@@ -1,0 +1,13 @@
+@Controller
+public class MessageController{
+
+  @Autowired // эта аннотация - 
+  private MesageRepository messageRepository;
+
+  @Autowired
+  private MessageService messageServise;
+
+  
+
+
+}
