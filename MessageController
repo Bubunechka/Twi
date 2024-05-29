@@ -1,12 +1,31 @@
 @Controller
 public class MessageController{
 
-  @Autowired // эта аннотация - 
+  @Autowired //TODO эта аннотация - 
   private MesageRepository messageRepository;
 
   @Autowired
   private MessageService messageServise;
 
+// Вставляем значение проперти в поле
+@Value ("${upload.path}") // TODO эта аннотация - , и это в скобках - (путь загрузки)??
+private String uploadPath; 
+
+@GetMapping
+public String greeting (Map<String, Object> model) { // в model складываем данные, которые хотим вернуть пользователю
+  return "greeting"; // возвращаем имя файла, который хотим отобразить
+}
+  @GetMapping ("/main")
+  public String add(
+    @AuthenticationPrincipal User user;
+    @Valid Message message;
+    BindingResult bindingResult, Model model // what happend?....
+    @RequestParam ("file") MultipartFile file
+  ) throws IOExceprion{
+    message.setAuthor(user);
+  }
+
+    if(bindingResult.hasErrors())
   
 
 
